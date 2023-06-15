@@ -3,10 +3,10 @@ node {
         checkout scm  
     } 
     stage('NPM Install'){
-        sh 'apt update'
-        sh 'apt install nodejs'
+        sh 'sudo apt update'
+        sh 'sudo apt install nodejs'
         sh 'node -v'
-        sh 'npm install -g @angular/cli'
+        sh 'sudo npm install -g @angular/cli'
         sh 'ng --version'
         sh 'npm install'
     }
