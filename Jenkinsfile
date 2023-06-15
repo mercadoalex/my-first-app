@@ -3,10 +3,12 @@ node {
         checkout scm  
     } 
     stage('NPM Install'){
-        sh 'sudo apt update'
-        sh 'sudo apt install nodejs'
+        //sh 'sudo apt update'
+        //sh 'sudo apt install nodejs'
+        //sh 'sudo apt install npm'
         sh 'node -v'
-        sh 'sudo npm install -g @angular/cli'
+        sh 'npm -v'
+        //sh 'npm install -g @angular/cli'
         sh 'ng --version'
         sh 'npm install'
     }
@@ -25,8 +27,9 @@ node {
     stage('Archive'){
         sh 'tar -cvzf dist.tar.gz --strip-components=1 dist'
         archive 'dist.tar.gz'
+        sh 'ls'
     } 
     stage('Deploy'){
-        echo 'Deploy'
+        echo 'Deploy - no hay servidor aun'
     }
 }
