@@ -10,8 +10,8 @@ node {
         sh 'sudo apt install nodejs npm -y'
         sh 'node -v'
         sh 'npm -v'
-        //sh 'npm install -g @angular/cli'
-        //sh 'ng --version'
+        sh 'npm install -g @angular/cli'
+        sh 'ng --version'
         sh 'npm install'
     }
     stage('Test'){
