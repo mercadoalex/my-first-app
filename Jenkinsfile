@@ -9,7 +9,7 @@ node {
         sh 'node -v'
         sh 'npm -v'
         //sh 'npm install -g @angular/cli'
-        sh 'ng --version'
+        //sh 'ng --version'
         sh 'npm install'
     }
     stage('Test'){
