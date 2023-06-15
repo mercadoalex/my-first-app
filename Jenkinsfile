@@ -1,21 +1,5 @@
-//groovy
-properties(
-    [
-        [$class: 'BuildDiscarderProperty', strategy:
-            [$class: 'LogRotator', artifactDaystoKeepStr: '14',artifactNumToKeepStr:'5', daysToKeepStr: '30', numToKeepStr: '60']],
-        pipelineTriggers(
-            [
-                pollSCM('H/15 * * * *'),
-                cron('@daily'),
-            ]
-        )     
-        ]
-) 
 node {
     stage('Checkout'){
-        //github
-        //workspace
-        deleteDir()
         checkout scm  
     } 
     stage('NPM Install'){
